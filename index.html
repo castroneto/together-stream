@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link async rel="stylesheet"
+        href="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.css" />
+
+
+</head>
+
+<body for="file-upload">
+
+    <label for="file-upload">ss</label>
+    <style>
+
+    body {
+        background-color: #95a5a6;
+    }
+    .exactCenter {
+      width:200px;
+      height:200px;
+      position: fixed;
+      background-color: #95a5a6;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -100px;
+      border: #2c3e50;
+      border-style: dashed;
+      border-width: 5px;
+      display: flex;
+    }
+
+    .exactCenter img {
+        width: 100px;  /* Or whatever */
+    height: 100px; /* Or whatever */
+    margin: auto;  /* Magic! */
+        width: 50%;
+    }
+
+    </style>
+
+
+<div class="exactCenter">
+    <img src="./upload-icon.png" alt="" srcset="">
+    <input id="file-upload" type="file"/>
+
+</div>
+
+    <!--
+
+
+    <h1>Hello World!</h1>
+    <p>
+        We are using node
+        <script>document.write(process.versions.node)</script>,
+        Chrome
+        <script>document.write(process.versions.chrome)</script>,
+        and Electron
+        <script>document.write(process.versions.electron)</script>.
+    </p>
+
+    <input type="file" id="upload" name="" id="">
+
+    <video id="video" width="320" height="240"></video>
+
+    -->
+
+
+    <script async src="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.js"></script>
+
+    <script src="./peerjs.min.js"></script>
+
+    <script>
+
+        const peer = new Peer({
+            host: 'localhost',
+            port: 9000,
+            path: '/myapp'
+        });
+
+
+
+        
+        console.log(peer)
+        var file = document.getElementById("upload");
+        var video = document.getElementById('video');
+        var source = document.createElement('source');
+        file.addEventListener("change", function () {
+            for (var i = 0; i < file.files.length; i++) {
+                video.pause();
+                source.setAttribute('src', "file://" + file.files[i].path);
+                video.load();
+                video.appendChild(source);
+                video.play();
+            }
+        }, false);
+
+        // file:///home/raimundo/Downloads/SampleVideo_1280x720_10mb.mp4
+    </script>
+    
+</body>
+
+</html>
