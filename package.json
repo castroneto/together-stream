@@ -14,6 +14,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "peer": "^0.6.1",
-    "peerjs-server": "^0.2.9"
+    "peerjs-server": "^0.2.9",
+    "websocket": "^1.0.33"
   }
 }

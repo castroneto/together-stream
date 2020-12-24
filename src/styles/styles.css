@@ -1,0 +1,75 @@
+body {
+    background-color: #95a5a6;
+    overflow: hidden;
+}
+
+
+img {
+    width: 100px;
+    /* Or whatever */
+    height: 100px;
+    /* Or whatever */
+    margin: auto;
+    /* Magic! */
+    width: 50%;
+}
+
+.fileOut {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    background-color: #95a5a6;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    border: #2c3e50;
+    border-style: dashed;
+    border-width: 5px;
+    display: flex;
+}
+
+.fileOn {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    background-color: #dbdedf;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    background-color: #d8d8d8;
+    border: #47596b;
+    border-style: dashed;
+    border-width: 5px;
+    display: flex;
+}
+
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;    
+}
+
+
+
+
+.info-streaming {
+    background-size: cover;
+    left: 82%;
+    top: 9%;
+    margin: -64px 0 0 -64px;
+    position: absolute;
+    background-color: #d8d8d815;
+    width: 200px;
+    height: 70px;
+    z-index: 1;
+}
+
+.info-streaming .p {
+    cursor: pointer;
+    padding: 10px;
+}

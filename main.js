@@ -1,12 +1,18 @@
 const { app, BrowserWindow } = require('electron')
-var PeerServer = require('peer').PeerServer;
-var server = PeerServer({port: 9000, path: '/myapp'});
+const websocket = require('./websocket');
+var http = require('http');
+var server = http.createServer(function (request, response) {
+  console.log((new Date()) + ' Received request for ' + request.url);
+  response.writeHead(404);
+  response.end();
+});
 
-server.on('connection', function(client) {
-    console.log(client)
-})
-function createWindow () {
-  
+server.listen(8080, function () {
+  console.log((new Date()) + ' Server is listening on port 8080');
+});
+
+websocket(server);
+function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -15,7 +21,7 @@ function createWindow () {
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('src/index.html')
 }
 
 app.whenReady().then(createWindow)
